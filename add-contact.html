@@ -13,9 +13,9 @@
       <label form="lastname">Last name</label>
       <input type="text" name="lastname" id="lastname" /><br />
       <label form="mobile">Mobile</label>
-      <input type="text" name="firstname" id="firstname" /><br />
+      <input type="text" name="mobile" id="mobile" /><br />
       <label form="email">Email</label>
-      <input type="text" name="firstname" id="firstname" /><br />
+      <input type="text" name="email" id="email" /><br />
       <label form="avatar">Select a file</label>
       <input type="file" name="avatar" id="avatar" /><br />
       <button type="submit" id="submitForm">Submit</button>
@@ -23,6 +23,14 @@
     <br />
     <button type="button" id="homeLink">Home</button>
 
-    <script></script>
+    <script src="config.js"></script>
+    <script>
+      function submitForm(e) {
+        e.preventDefault();
+
+        const form = new FormData(document.querySelector("#editForm"));
+        form.append("apiKey", apiKey);
+      }
+    </script>
   </body>
 </html>
